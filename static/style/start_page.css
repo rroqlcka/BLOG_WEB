@@ -1,0 +1,66 @@
+.first_last {
+    height: 60px;
+    width: 100%;
+    border-color: pink;
+    border-width: 1px;
+    border-style: solid;
+}
+
+#main {
+    border-color: blue;
+    border-width: 1px;
+    border-style: solid;
+    margin: 100px;
+}
+
+.cover {
+    height: 60px;
+}
+
+body {
+    margin: 0px;
+}
+
+
+#test {
+    animation: fadein 2s;
+    -moz-animation: fadein 2s; /* Firefox */
+    -webkit-animation: fadein 2s; /* Safari and Chrome */
+    -o-animation: fadein 2s; /* Opera */
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes fadein { /* Firefox */
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadein { /* Safari and Chrome */
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@-o-keyframes fadein { /* Opera */
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

@@ -1,0 +1,24 @@
+@font-face {
+    font-family: 'VANITY';
+    src: url("Vanity-Bold.otf") format("opentype");
+}
+
+@font-face {
+    font-family: 'FuturaStd';
+    src: url("FuturaStd-Light.otf") format("opentype");
+}
+
+@font-face {
+    font-family: 'FuturaStd_heavy';
+    src: url("FuturaStd-Heavy.otf") format("opentype");
+}
+
+@font-face {
+    font-family: 'FuturaStd_medium';
+    src: url("FuturaStd-Medium.otf") format("opentype");
+}
+
+@font-face {
+    font-family: 'FuturaStd_light';
+    src: url("FuturaStd-Light.otf") format("opentype");
+}

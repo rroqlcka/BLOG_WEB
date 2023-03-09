@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../static/js/bootstrap.min.js?ver=5"></script>
+    <script src="../static/js/jquery.min.js"></script>
+    <link rel="stylesheet" href="../static/style/main_page.css">
+    <link rel="stylesheet" href="../static/font/letter_font.css">
+    <title>Test</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+</head>
+
+<style>
+
+    #main_wrap {
+        width: 100vw;
+        height: 100vh;
+        /*font-family: FuturaStd_heavy;*/
+        /*font-size: 30px;*/
+        display: flex;
+        flex-direction: column;
+        /*justify-content: center;*/
+        align-items: center;
+        scroll-behavior: smooth;
+
+    }
+
+    #main_wrap_h1 {
+        margin-top: 33vh;
+        opacity: 0;
+        transition: all 1.3s ease;
+        margin-bottom: 15vh;
+        font-family: Poppins, sans-serif;
+        font-size: 70px;
+    }
+
+    .arrow {
+        position: relative;
+        left: 0;
+        top: 0;
+        border-top: 3px solid;
+        border-right: 3px solid;
+        margin: 0px;
+        width: 20px;
+        height: 20px;
+        transform: rotate(90deg);
+        /*margin-top: 0vh;*/
+        transition: all 1s ease;
+        opacity: 0;
+    }
+
+    #main_wrap_scroll_down {
+        margin-top: 5vh;
+        font-family: Poppins, sans-serif;
+        color: dimgray;
+        transition: all 2s ease;
+        opacity: 0;
+    }
+
+    ul li {
+        /*height: 75vh;*/
+        /*padding-top: 10vh;*/
+    }
+
+    .view_list {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: stretch;
+    }
+
+    .view_list_down_btn, .view_list_up_btn {
+        /*background: lightsteelblue;*/
+        width: 100vw;
+        height: 10vh;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /*pointer-events: none;*/
+        font-family: FuturaStd_medium;
+    }
+
+    .view_list_up_btn:hover, .view_list_down_btn:hover {
+        opacity: 1;
+    }
+
+
+</style>
+
+<body>
+
+<!--start animation-->
+
+<div id="main_wrap">
+    <canvas id="start_canvas"></canvas>
+    <h1 id="main_wrap_h1">MEET OUR FRIENDS</h1>
+    <div style="color: lightgray;transition-delay: 0.2s" class="arrow"></div>
+    <div style="color: darkgray;transition-delay: 0.3s" class="arrow"></div>
+    <div style="color: dimgray;transition-delay: 0.4s" class="arrow"></div>
+    <p id="main_wrap_scroll_down"> scroll down</p>
+</div>
+
+
+<div class="view_list">
+    <div class="view_list_up_btn"><p>^</p></div>
+    <div class="fadein">
+        <div class="head_line">
+            <p style="font-family: FuturaStd; font-size: 13px">DESCRIBE THE ARTIST OF THEIR OWN MAYBE IT IS HARD TO SHOW
+                THEM BUT JUST TRY YOUR BEST</p>
+            <h style="font-family: FuturaStd_medium; margin-bottom: 1vh; font-size: 20px">PETER</h>
+        </div>
+        <p class="type_line">B L O G 1</p>
+        <div>
+            <button class="btn-up" style="margin-bottom: 4vh; color: lightgray"> <</button>
+            <button class="btn-down" style="margin-top: 4vh;"> ></button>
+        </div>
+        <div class="preview">
+            <ul>
+                <li class="preview_img_0">
+                    <a href=""><img src="../static/image/test_2.JPG"></a>
+                </li>
+                <li class="preview_img_0">
+                    <a href=""><img src="../static/image/test_3.JPG"></a>
+                </li>
+                <li class="preview_img_0">
+                    <a href=""><img src="../static/image/test_4.JPG"></a>
+                </li>
+                <li class="preview_img_0">
+                    <a href=""><img src="../static/image/test_2.JPG"></a>
+                </li>
+                <li class="preview_img_0">
+                    <a href=""><img src="../static/image/test_3.JPG"></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="view_list_down_btn"><p style="transform: rotate(180deg)">^</p></div>
+</div>
+
+
+<div class="view_list">
+    <div class="view_list_up_btn"><p>^</p></div>
+    <div class="fadein">
+        <!--    <div id="artist_move_right"></div>-->
+        <div class="head_line">
+            <p style="font-family: FuturaStd; font-size: 13px">DESCRIBE THE ARTIST OF THEIR OWN MAYBE IT IS HARD TO SHOW
+                THEM BUT JUST TRY YOUR BEST</p>
+            <h style="font-family: FuturaStd_medium; margin-bottom: 1vh; font-size: 20px">PETER</h>
+        </div>
+        <p class="type_line">B L O G 2</p>
+        <div>
+            <button class="btn-up" style="margin-bottom: 4vh; color: lightgray"> <</button>
+            <button class="btn-down" style="margin-top: 4vh;"> ></button>
+        </div>
+        <div class="preview">
+            <ul>
+                <li class="preview_img_1">
+                    <a href=""><img src="../static/image/test_2.JPG"></a>
+                </li>
+                <li class="preview_img_1">
+                    <a href=""><img src="../static/image/test_3.JPG"></a>
+                </li>
+                <li class="preview_img_1">
+                    <a href=""><img src="../static/image/test_4.JPG"></a>
+                </li>
+                <li class="preview_img_1">
+                    <a href=""><img src="../static/image/test_2.JPG"></a>
+                </li>
+                <li class="preview_img_1">
+                    <a href=""><img src="../static/image/test_3.JPG"></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="view_list_down_btn"><p style="transform: rotate(180deg)">^</p></div>
+</div>
+
+</body>
+
+<script>
+
+    // 변수 설정
+
+
+    let fadein = document.querySelectorAll(".fadein");
+    let view_list = document.querySelectorAll(".view_list");
+    let arrow = document.querySelectorAll(".arrow");
+    let main_wrap_scroll_down = document.getElementById("main_wrap_scroll_down");
+    let preview = document.querySelectorAll(".preview");
+    let btn_up = document.querySelectorAll(".btn-up");
+    let btn_down = document.querySelectorAll(".btn-down");
+    let main_wrap_h1 = document.getElementById('main_wrap_h1');
+    let head_line = document.querySelectorAll('.head_line');
+    let type_line = document.querySelectorAll('.type_line');
+    let view_list_up_btn = document.querySelectorAll('.view_list_up_btn');
+    let view_list_down_btn = document.querySelectorAll('.view_list_down_btn');
+    let max_scroll_lo = 1;
+
+
+    sessionStorage.setItem("scroll", '0');
+
+
+    let scroll_location = () => parseInt(Math.round(Number(window.pageYOffset)) / 714) - 1;
+
+    function preview_show_up(page_num) {
+
+        setTimeout(function () {
+            fadein.item(page_num).style.opacity = '1';
+            head_line.item(page_num).style.marginBottom = '0vh';
+            type_line.item(page_num).style.marginLeft = '3vw';
+            view_list.item(page_num).scrollIntoView();
+        }, 1600);
+
+        setTimeout(function () {
+            fadein.item(page_num).style.pointerEvents = 'auto';
+            view_list_up_btn.item(page_num).style.pointerEvents = 'auto';
+            view_list_down_btn.item(page_num).style.pointerEvents = 'auto';
+        }, 3300);
+    }
+
+    function preview_show_close(page_num) {
+
+        fadein.item(page_num).style.pointerEvents = 'none';
+        view_list_up_btn.item(page_num).style.pointerEvents = 'none';
+        view_list_down_btn.item(page_num).style.pointerEvents = 'none';
+
+        fadein.item(page_num).style.opacity = '0';
+        head_line.item(page_num).style.marginBottom = '70vh';
+        type_line.item(page_num).style.marginLeft = '-15vw';
+    }
+
+    function start_page_scroll_down(w) {
+        main_wrap_h1.style.transitionDelay = '0.5s';
+        document.getElementById('main_wrap_scroll_down').style.transitionDuration = '0.5s';
+        main_wrap_h1.style.opacity = '0';
+
+        for (var k = 0; k < arrow.length; k++) {
+            arrow.item(k).style.transform = 'rotate(315deg)';
+            arrow.item(k).style.marginTop = '0vh';
+            arrow.item(k).style.opacity = '0';
+        }
+
+        main_wrap_scroll_down.style.marginTop = '5vh';
+        main_wrap_scroll_down.style.opacity = '0';
+        main_wrap_h1.style.marginTop = '10vh';
+        sessionStorage.setItem("scroll", 1);
+
+    }
+
+    function canvas_transition() {
+        setTimeout(function () {
+            document.querySelector('#start_canvas').style.transform = 'scale(0,1)';
+            main_wrap_h1.style.transitionDelay = '1s';
+            main_wrap_h1.style.opacity = '1';
+
+            setTimeout(function () {
+                for (var i = 0; i < arrow.length; i++) {
+                    arrow.item(i).style.marginTop = '2vh';
+                    arrow.item(i).style.opacity = '1';
+                    arrow.item(i).style.transform = 'rotate(135deg)';
+                }
+                setTimeout(function () {
+                    main_wrap_scroll_down.style.opacity = '1';
+                    main_wrap_scroll_down.style.marginTop = '10vh'
+                }, 500);
+            }, 1500);
+        }, 1000);
+    }
+
+
+    function view_list_down_btn_click(e) {
+        let scroll_lo = scroll_location();
+        if (scroll_lo < max_scroll_lo) {
+            preview_show_close(scroll_lo);
+            preview_show_up(scroll_lo + 1);
+        } else {
+            view_list_down_btn.style.pointerEvents = 'none';
+        }
+    }
+
+
+    function view_list_up_btn_click(e) {
+        let scroll_lo = scroll_location();
+        if (scroll_lo == 0) {
+            preview_show_close(0);
+            setTimeout(() => {
+                window.scrollTo(0, 0);
+                main_wrap_h1.style.transitionDelay = '1s';
+                main_wrap_h1.style.opacity = '1';
+
+                setTimeout(function () {
+                    for (var i = 0; i < arrow.length; i++) {
+                        arrow.item(i).style.marginTop = '2vh';
+                        arrow.item(i).style.opacity = '1';
+                        arrow.item(i).style.transform = 'rotate(135deg)';
+                    }
+                    setTimeout(function () {
+                        main_wrap_scroll_down.style.opacity = '1';
+                        main_wrap_scroll_down.style.marginTop = '10vh'
+                    }, 500);
+                }, 1500);
+            }, 1600);
+            sessionStorage.setItem("scroll", 0);
+        } else {
+            preview_show_close(scroll_lo);
+            preview_show_up(scroll_lo - 1);
+        }
+    }
+
+
+    let scroll_lo = scroll_location();
+
+    if (scroll_lo == -1) {
+        canvas_transition();
+        console.log('hi');
+    } else {
+        document.getElementById('start_canvas').style.transform = 'scale(0,1)';
+        fadein.item(scroll_lo).style.opacity = '1';
+        head_line.item(scroll_lo).style.marginBottom = '0vh';
+        type_line.item(scroll_lo).style.marginLeft = '3vw';
+        view_list.item(scroll_lo).scrollIntoView();
+        setTimeout(function () {
+            fadein.item(scroll_lo).style.pointerEvents = 'auto';
+            view_list_up_btn.item(scroll_lo).style.pointerEvents = 'auto';
+            view_list_down_btn.item(scroll_lo).style.pointerEvents = 'auto';
+        }, 3300);
+
+    }
+
+
+    // canvas 위에선 스크롤 금지
+    $('canvas').on("scroll touchmove mousewheel", function (event) {
+        event.preventDefault();
+        event.stopPropagation();
+        return false;
+    });
+
+
+    // point color changed
+
+    let j = 0;
+
+    sessionStorage.setItem("scroll", 0);
+
+
+    $('[class=view_list_up_btn]').click(function (e) {
+        e.preventDefault();
+        let scroll_lo = scroll_location();
+        view_list_up_btn_click();
+    });
+
+
+    // DOWN
+    $('[class=view_list_down_btn]').click(function (e) {
+        e.preventDefault();
+        let scroll_lo = scroll_location();
+        view_list_down_btn_click();
+    });
+
+
+    $("#main_wrap").on('mousewheel', function (e) {
+        var wheel = e.originalEvent.wheelDelta;
+        if (scroll_location() == -1 && sessionStorage.getItem("scroll") == 0 && wheel < -500) {
+            start_page_scroll_down(wheel);
+            preview_show_up(0);
+
+            setTimeout(function () {
+                main_wrap_h1.style.transitionDelay = '0.5s';
+                document.getElementById('main_wrap_scroll_down').style.transitionDuration = '0.5s';
+                main_wrap_h1.style.opacity = '0';
+
+                for (var i = 0; i < arrow.length; i++) {
+                    arrow.item(i).style.marginTop = '0vh';
+                    arrow.item(i).style.opacity = '0';
+                    arrow.item(i).style.transform = 'rotate(90deg)';
+                }
+                main_wrap_scroll_down.style.opacity = '0';
+                main_wrap_scroll_down.style.marginTop = '5vh';
+                main_wrap_h1.style.marginTop = '33vh';
+            }, 1700);
+
+        }
+    });
+
+
+    let i = 0;
+    // UP
+    $('[class=btn-up]').click(function (e) {
+        e.preventDefault();
+        let scroll_lo = scroll_location();
+        if (i != 0) {
+            if (i == 1) {
+                btn_up.item(scroll_lo).style.color = 'lightgray';
+                btn_up.item(scroll_lo).style.pointerEvents = 'none';
+            } else if (i == 4) {
+                btn_down.item(scroll_lo).style.color = 'black';
+                btn_down.item(scroll_lo).style.pointerEvents = 'auto';
+            }
+            i -= 1;
+            document.querySelectorAll('.preview_img_' + scroll_lo).item(i).scrollIntoView();
+            view_list.item(scroll_lo).scrollIntoView();
+        }
+    });
+
+
+    // DOWN
+    $('[class=btn-down]').click(function (e) {
+        e.preventDefault();
+        let scroll_lo = scroll_location();
+        if (i != 4) {
+            if (i == 3) {
+                btn_down.item(scroll_lo).style.color = 'lightgray';
+                btn_down.item(scroll_lo).style.pointerEvents = 'none';
+            } else if (i == 0) {
+                btn_up.item(scroll_lo).style.color = 'black';
+                btn_up.item(scroll_lo).style.pointerEvents = 'auto';
+            }
+            i += 1;
+            document.querySelectorAll('.preview_img_' + scroll_lo).item(i).scrollIntoView();
+            view_list.item(scroll_lo).scrollIntoView();
+        }
+    });
+
+
+</script>
+
+</html>

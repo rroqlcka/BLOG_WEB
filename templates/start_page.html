@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../static/js/bootstrap.min.js?ver=5"></script>
+    <script src="../static/js/jquery.min.js"></script>
+    <link rel="stylesheet" href="../static/font/font.css">
+    <link rel="stylesheet" href="../static/style/start_page.css">
+    <title>Yes, I did it.</title>
+
+</head>
+<body>
+
+<canvas></canvas>
+
+<div class="wrapper_btn">
+    <div>
+    <center>
+        <button id="btn_image" >
+            <img  style="height: 100px" id="img" src="../static/image/Logo.002.png">
+        </button>
+        <p id="font_main_hide">클릭하여 선물을 열어 보세요.</p>
+    </center>
+    </div>
+</div>
+
+
+</body>
+
+
+<script>
+
+    // n초 뒤에 페이지 이동 실행
+
+
+
+    // js로 hover 글씨색 변경
+    let hover_img = document.getElementById("img");
+    let The_changed_text = document.getElementById("font_main_hide");
+    let canvas = document.querySelector('canvas');
+
+    canvas.style.opacity = '0';
+
+    hover_img.addEventListener("mouseover", function (){
+        The_changed_text.style.color = "#5E5E5E"
+        // btn_img.style.transform = 'scale(1,1)'
+    }, false);
+
+    hover_img.addEventListener("mouseout", function (){
+        The_changed_text.style.color = "white"
+    }, false);
+
+    hover_img.addEventListener("mousedown", function (){
+        The_changed_text.style.opacity = "0";
+        canvas.style.opacity = '1';
+        canvas.style.transform = "scale(1,1)";
+        document.querySelector('.wrapper_btn').style.opacity = "0";
+    }, false);
+
+    $('img').click(function() {
+        setTimeout(function () {
+            location.href = '/main_page'
+        },2000);
+    });
+
+
+</script>
+</html>
